@@ -1,0 +1,11 @@
+CREATE NEW PROJECT:
+
+1. Create a directory
+	mkdir directoryName
+
+2. Create json file (Package.json)
+ 	npm init
+
+3. Install Express Framework (node_modules)
+	npm install express ---> To install express packages/modules
+	npm install experss --save ---> To save the intalled node packages/moduels to the respective project folder.

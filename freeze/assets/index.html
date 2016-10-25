@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta charset="UTF-8">
+    <title>freeze - my first page in angular js</title>
+    <base href="/">
+    <link rel="icon" type="image/png" href="img/fav.png">
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>
+    
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+  </head>
+  <body ng-app="myApp">
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <nav class = "navbar navbar-default" role = "navigation" style="border-radius:0px !important;border-left: 0px;">
+                        <div class = "navbar-header">
+                            <a class = "navbar-brand fix-logo-text" href = "#">freeze</a>
+                        </div>
+                    </nav>
+                </li>
+                <li>
+                    <a href="#/">Home</a>
+                </li>
+                <li>
+                    <a href="#/blog">Blog</a>
+                </li>
+                <li>
+                    <a href="#/about">About</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <nav style="border-radius:0px !important;border-left: 0px;" class = "navbar navbar-default" role = "navigation">
+                        <div class = "navbar-header">
+                            <span style="border-right:0px !important;">
+                                <a class = "navbar-brand fix-logo-text-icon" id="menu-toggle" href = "#">&#9776;</a>
+                            </span>
+                        </div>
+                    </nav>
+                    <div class="col-lg-12">
+                      <script type="text/ng-template" id="pages/home.html">
+                        <h1>{{messageHome}}</h1>
+                        <h3>{{message}}</h3>
+                      </script>
+                      <script type="text/ng-template" id="pages/blog.html">
+                        <h1>{{messageBlog}}</h1>
+                        <h3>{{message}}</h3>
+                      </script>
+                      <script type="text/ng-template" id="pages/about.html">
+                        <h1>{{messageAbout}}</h1>
+                        <h3>{{message}}</h3>
+                      </script>
+                      <div ng-view></div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <script src="js/app.js"></script>
+    <script>
+      $("#menu-toggle").click(function(e) {
+          e.preventDefault();
+          $("#wrapper").toggleClass("toggled");
+      });
+    </script>
+  </body>
+</html>
